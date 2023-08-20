@@ -1,0 +1,7 @@
+@use 'styles/__/$' as *;
+
+@mixin interactive {
+	cursor: pointer;
+	user-select: none;
+	transition: background 0.1s;
+}
