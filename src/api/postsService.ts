@@ -22,6 +22,10 @@ export default class PostsService {
 			_limit,
 			_start,
 		};
+		if (params._limit === 0) {
+			Reflect.deleteProperty(params, '_limit');
+			Reflect.deleteProperty(params, '_start');
+		}
 		const searchParams = id
 			? `/${id}?${new URLSearchParams({ _embed: 'comments' })}`
 			: `?${new URLSearchParams(params as unknown as Record<string, string>)}`;

@@ -2,14 +2,14 @@ import APIConfiguration from 'api/conf';
 import { IUsersGetParams, IUsersPostBody } from 'types/_';
 
 export default class UsersService {
-	private static route: string = '/uesrs';
+	private static route: string = '/users';
 
 	private static url: string = APIConfiguration.baseUrl + this.route;
 
 	public static async get({
 		username,
 		email,
-	}: IUsersGetParams): Promise<Response> {
+	}: IUsersGetParams = {}): Promise<Response> {
 		const params = {
 			...(username && { username_like: `^${username}$` }),
 			...(email && { email_like: `^${email}$` }),
