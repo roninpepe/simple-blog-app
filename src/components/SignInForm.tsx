@@ -1,5 +1,3 @@
-import API from 'api/api';
-import { ReactComponent as Loader } from 'assets/icons/loader.svg';
 import {
 	ChangeEventHandler,
 	FC,
@@ -7,9 +5,11 @@ import {
 	useContext,
 	useState,
 } from 'react';
-import styles from 'styles/components/SignInForm.module.scss';
-import { AppContext } from './App/Context';
+import { AppContext } from 'components/App/Context';
+import API from 'api/api';
 import LS from 'utils/LS';
+import { ReactComponent as Loader } from 'assets/icons/loader.svg';
+import styles from 'styles/components/SignInForm.module.scss';
 
 const SignInForm: FC = () => {
 	const [isSubmitted, setIsSubmitted] = useState(false);

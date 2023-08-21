@@ -1,0 +1,40 @@
+@use 'styles/_' as *;
+
+.content {
+	background: $c-bg-main;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 10px;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	max-width: 320px;
+	max-height: 370px;
+	padding: 16px;
+	cursor: default;
+}
+
+.overlay {
+	@include _interactive;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba($c-bg-tertiary, 0.6);
+}
+
+._ {
+	display: flex;
+	flex-direction: column;
+}
+
+.textarea {
+	resize: none;
+	width: 100%;
+	height: 220px;
+}

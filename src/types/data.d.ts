@@ -2,8 +2,9 @@ export interface IPost {
 	userId: number;
 	id: number;
 	title: string;
-	desc: string;
-	isYou: boolean;
+	body: string;
+	isYou?: boolean;
+	comments?: IComment[];
 }
 export interface IComment {
 	id: number;

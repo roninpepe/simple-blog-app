@@ -118,6 +118,7 @@ button {
 	border: 2px solid;
 	border-radius: 5px;
 	cursor: pointer;
+	user-select: none;
 	&:hover {
 		color: $c-f-accents;
 		fill: $c-f-accents;
@@ -169,6 +170,32 @@ textarea {
 	color: $c-f-main;
 	padding: 6px 12px;
 	border-radius: 5px;
+
+	&:focus {
+		border-color: $c-b-accents;
+		outline: none;
+	}
+
+	&:disabled {
+		cursor: not-allowed;
+	}
+}
+
+select {
+	font-size: 1.1rem;
+	text-align: center;
+	min-width: 0;
+	border: 1px solid $c-b-main;
+	background: $c-bg-tertiary;
+	color: $c-f-main;
+	padding: 6px 12px;
+	border-radius: 5px;
+	cursor: pointer;
+	user-select: none;
+
+	&:hover {
+		border-color: $c-b-accents;
+	}
 
 	&:focus {
 		border-color: $c-b-accents;

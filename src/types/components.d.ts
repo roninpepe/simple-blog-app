@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { IComment, IPost } from 'types/_';
+import { IComment, IPost, IPostsGetParams } from 'types/_';
 
 /* main */
 
@@ -20,32 +20,35 @@ export interface IAppContextUser {
 
 export interface IAppContext {
 	user: IAppContextUser;
-	posts: IPost[];
-	isInited: boolean;
 }
 
 /* props */
 
 export interface IPostsProps extends IElementProps {
-	notes: IPost[];
+	posts: IPost[];
 }
 export interface IPostProps extends IElementProps {
-	note: IPost;
-}
-export interface ICommentsProps extends IElementProps {
-	comments: IComment[];
+	post: IPost;
+	fromList?: boolean;
+	deletePost?: (id: number) => void;
 }
 export interface ICommentProps extends IElementProps {
 	comment: IComment;
 }
-
 export interface IErrorProps extends IElementProps {
 	message: string;
 }
 
 /* state */
 
-export interface INoteState {
-	message: string;
-	edit: boolean;
+export interface IPostState {
+	isLoading: boolean;
+	postData?: IPost;
+}
+export interface IPostListState {
+	isInited: boolean;
+	isLoading: boolean;
+	posts: IPost[];
+	params: IPostsGetParams;
+	totalCount?: number;
 }
