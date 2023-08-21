@@ -1,7 +1,8 @@
 import { FC } from 'react';
+import SignInForm from 'components/SignInForm';
 
 const SignIn: FC = () => {
-	return <div>SignIn</div>;
+	return <SignInForm />;
 };
 
 export default SignIn;

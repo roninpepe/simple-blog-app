@@ -1,4 +1,4 @@
-import { Context, FC, createContext, useEffect, useState } from 'react';
+import { Context, FC, createContext, useState } from 'react';
 import { IAppContext, IAppContextUser, IElementProps, IPost } from 'types/_';
 
 import LS from 'utils/LS';
@@ -15,7 +15,7 @@ class AppContextDefault implements IAppContext {
 	}
 }
 
-const ls: IAppContextUser | null = LS.get<IAppContextUser>('user')?.uesr;
+const ls: IAppContextUser | null = LS.get<IAppContextUser>('user').user;
 const currentUser: IAppContextUser = ls ?? { isAuth: false };
 
 const context: IAppContext = new AppContextDefault(currentUser);
@@ -42,10 +42,6 @@ const AppContextProvider: FC<IElementProps> = ({ children }) => {
 	const [state, setState] = useState<IAppContext>(
 		new AppContextDefault(currentUser),
 	);
-
-	useEffect(() => {
-		LS.set({ user: state.user });
-	}, [state.user]);
 
 	return (
 		<AppContext.Provider

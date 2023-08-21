@@ -1,38 +1,11 @@
-._ {
-	text-align: center;
-}
-
-.logo {
-	height: 40vmin;
-	pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-	.logo {
-		animation: logo-spin infinite 20s linear;
-	}
-}
-
-.header {
-	background-color: #282c34;
-	min-height: 100vh;
+._,
+.content {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	font-size: calc(10px + 2vmin);
-	color: white;
+	flex-grow: 1;
 }
-
-.link {
-	color: #61dafb;
-}
-
-@keyframes logo-spin {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
+.content {
+	align-self: center;
+	max-width: 1024px;
+	padding: 20px 0;
 }

@@ -1,5 +1,5 @@
 import { FC, useContext } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { AppContext } from 'components/App/Context';
 import PageLayout from 'views/PageLayout.view';
 import Home from 'views/Home.view';
@@ -22,15 +22,15 @@ const AppRouter: FC = () => {
 					<Route index element={<Home />} />
 					{isAuth ? (
 						<>
-							<Route path="signin" element={<Posts />} />
+							<Route path="signin" element={<Navigate to="/posts" />} />
 							<Route path="posts" element={<Posts />} />
 							<Route path="posts/:id" element={<Post />} />
 						</>
 					) : (
 						<>
 							<Route path="signin" element={<SignIn />} />
-							<Route path="posts" element={<SignIn />} />
-							<Route path="posts/:id" element={<SignIn />} />
+							<Route path="posts" element={<Navigate to="/signin" />} />
+							<Route path="posts/:id" element={<Navigate to="/signin" />} />
 						</>
 					)}
 					<Route path="*" element={<NotFound />} />

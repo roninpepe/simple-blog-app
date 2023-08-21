@@ -1,7 +1,8 @@
 import { FC } from 'react';
+import Error from 'components/Error';
 
 const NotFound: FC = () => {
-	return <div>NotFound</div>;
+	return <Error message="Страница не найдена" />;
 };
 
 export default NotFound;

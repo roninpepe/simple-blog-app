@@ -27,6 +27,5 @@ export interface IUsersGetParams {
 	email?: string;
 }
 export interface IUsersPostBody {
-	username: string;
 	email: string;
 }

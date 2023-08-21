@@ -39,6 +39,10 @@ export interface ICommentProps extends IElementProps {
 	comment: IComment;
 }
 
+export interface IErrorProps extends IElementProps {
+	message: string;
+}
+
 /* state */
 
 export interface INoteState {
